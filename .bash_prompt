@@ -3,7 +3,7 @@
 
 default_username='unknown'
 USERNAME=$USER
-USERNAME=demo
+USERNAME=dieter
 OSNAME="HypriotOS: "
 PROMPTCHAR="\$"
 
