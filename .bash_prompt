@@ -2,6 +2,8 @@
 # Shamelessly copied from https://github.com/gf3/dotfiles
 
 default_username='unknown'
+USERNAME=$USER
+USERNAME=demo
 OSNAME="HypriotOS: "
 PROMPTCHAR="\$"
 
@@ -63,8 +65,8 @@ function git_info() {
 
 # Only show username/host if not default
 function usernamehost() {
-  if [ $USER != $default_username ]; then
-    echo "${BLUE}${OSNAME}${MAGENTA}$USER${RESET}${BOLD}@${ORANGE}$HOSTNAME${RESET}${BOLD} in ";
+  if [ $USERNAME != $default_username ]; then
+    echo "${BLUE}${OSNAME}${MAGENTA}$USERNAME${RESET}${BOLD}@${ORANGE}$HOSTNAME${RESET}${BOLD} in ";
   else
     echo "${BLUE}${OSNAME}";
   fi
