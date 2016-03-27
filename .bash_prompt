@@ -3,9 +3,12 @@
 
 default_username='unknown'
 USERNAME=$USER
-USERNAME=dieter
 OSNAME="HypriotOS: "
 PROMPTCHAR="\$"
+
+# Demo settings
+USERNAME=dieter
+export PROMPT_COMMAND='echo -ne "\033];Docker for Mac\007"'
 
 # determine OS type
 if [ $(uname -s) = Darwin ]; then
@@ -83,4 +86,4 @@ function usernamehost() {
 # in the iterm tab
 # \[\e]1;\]$(basename $(dirname $PWD))/\W\[\a\]
 
-PS1="\[\e]2;$PWD\[\a\]\[\e]1;\]$(basename "$(dirname "$PWD")")/\W\[\a\]${BOLD}\$(usernamehost)\[$GREEN\]\w\$(git_info)\[$RESET\]\[$BOLD\]\n${PROMPTCHAR} \[$RESET\]"
+PS1="${BOLD}\$(usernamehost)\[$GREEN\]\w\$(git_info)\[$RESET\]\[$BOLD\]\n${PROMPTCHAR} \[$RESET\]"
